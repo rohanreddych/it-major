@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+		/>
+		<title>Login</title>
+		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i"
+		/>
+		<link rel="stylesheet" href="assets/fonts/ionicons.min.css" />
+		<link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css"
+		/>
+		<link rel="stylesheet" href="assets/css/Login-Form-Clean.css" />
+		<link rel="stylesheet" href="assets/css/smoothproducts.css" />
+	</head>
+
+	<body>
+		<script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$("form#login").on("submit", function (e) {
+					e.preventDefault();
+					var data = {
+						email: $("input[name=email]").val(),
+						password: $("input[name=password]").val(),
+					};
+					$.ajax({
+						type: "post",
+						url: "../login",
+						data: data,
+						dataType: "json",
+						success: function (data) {
+							if (data["message"] == 1) {
+								// alert("Success, GO to login Page");
+								window.location.href = "../home";
+							}
+						},
+						statusCode: {
+							469: function () {
+								alert("Username of password Incorrect!");
+							},
+						},
+					});
+				});
+			});
+		</script>
+		<nav
+			class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar"
+		>
+			<div class="container">
+				<a class="navbar-brand logo" href="index.html"
+					>OLX Prices Web Crawler</a
+				><button
+					data-toggle="collapse"
+					class="navbar-toggler"
+					data-target="#navcol-1"
+				>
+					<span class="sr-only">Toggle navigation</span
+					><span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navcol-1">
+					<ul class="nav navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="features.html"
+								>Features</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="signup.html">Signup</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="login.html"
+								>Login</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="contact-us.html"
+								>Contact Us</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<main class="page"></main>
+		<div class="login-clean">
+			<form method="post" id="login">
+				<h2 class="sr-only">Login Form</h2>
+				<div class="illustration">
+					<i class="icon ion-ios-navigate"></i>
+				</div>
+				<div class="form-group">
+					<input
+						type="email"
+						class="form-control"
+						name="email"
+						placeholder="Email"
+						autofocus
+						required
+					/>
+				</div>
+				<div class="form-group">
+					<input
+						type="password"
+						class="form-control"
+						name="password"
+						placeholder="Password"
+						required
+					/>
+				</div>
+				<div class="form-group">
+					<button class="btn btn-primary btn-block" type="submit">
+						Log In
+					</button>
+				</div>
+				<!-- <a class="forgot" href="passreset.php"
+					>Forgot your email or password?</a
+				> -->
+			</form>
+		</div>
+		<footer class="page-footer dark">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-3">
+						<h5>Get started</h5>
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li><a href="/signup">Sign up</a></li>
+							<!-- <li><a href="#">Downloads</a></li> -->
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer-copyright">
+				<p>© 2020 Rohan Reddy CH.</p>
+			</div>
+		</footer>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+		<script src="assets/js/smoothproducts.min.js"></script>
+		<script src="assets/js/theme.js"></script>
+	</body>
+</html>
