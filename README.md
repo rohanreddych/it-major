@@ -51,8 +51,8 @@ implement the Ajax, JQuery and JSON features.
 
 ### How to run
 ```
-git clone https://github.com/rohanreddych/IT-major-olx-webcrawler.git
-cd IT-major-olx-webcrawler
+git clone https://github.com/rohanreddych/it-major.git
+cd 
 npm i
 npm run start
 ```
