@@ -9,6 +9,7 @@ Web Crawler
 ✔ Create the first page (home/index page) along with five other web pages for your website
 that demonstrates effective application of design elements based on your website plan.
 
+
 - home
 - features
 - login
@@ -68,3 +69,6 @@ npm run start
 - The front page of olx shows almost same posts every time we open the website. This is because they have a default page if you dont allow your location permission, since we are using a library for making requests we cant enable geolocation api permission, in future I will figure out how to send device location while making requests with axios.
 
 - Using a recommender engine based on searches and clicks to recommend products.
+
+
+-Made with ❤
